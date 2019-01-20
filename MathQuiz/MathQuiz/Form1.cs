@@ -51,6 +51,24 @@ namespace MathQuiz
 
         public void StartQuiz()
         {
+            // Reset the answers
+            timeLabel.BackColor = Color.White;
+
+            sum1.Value = 0;
+            sum2.Value = 0;
+            sum3.Value = 0;
+            sum4.Value = 0;
+
+            sum1.BackColor = Color.White;
+            sum2.BackColor = Color.White;
+            sum3.BackColor = Color.White;
+            sum4.BackColor = Color.White;
+
+            sum1.ForeColor = Color.Black;
+            sum2.ForeColor = Color.Black;
+            sum3.ForeColor = Color.Black;
+            sum4.ForeColor = Color.Black;
+
             // Set Addition
             addend1 = randomizer.Next(51);
             addend2 = randomizer.Next(51);
@@ -97,11 +115,6 @@ namespace MathQuiz
             StartQuiz();
             startButton.Enabled = false;
 
-            addSum = 0;
-            subSum = 0;
-            multSum = 0;
-            divSum = 0;
-
             isAddCorrect = false;
             isSubCorrect = false;
             isMultCorrect = false;
@@ -118,10 +131,6 @@ namespace MathQuiz
                 if (isAddCorrect && isSubCorrect && isMultCorrect && isDivCorrect)
                 {
                     timer1.Stop();
-                    sum1.Enabled = false;
-                    sum2.Enabled = false;
-                    sum3.Enabled = false;
-                    sum4.Enabled = false;
 
                     MessageBox.Show("Congratulations! You passed the quiz!", "Yay for you!");
                     startButton.Enabled = true;
